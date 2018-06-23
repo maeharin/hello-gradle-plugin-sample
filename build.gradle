@@ -3,9 +3,13 @@ buildscript {
 
     repositories {
         mavenCentral()
+        maven {
+            url "https://dl.bintray.com/maeharin/hello-gradle-plugin"
+        }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.maeharin:hello-gradle-plugin:0.0.2'
     }
 }
 
@@ -13,17 +17,14 @@ group 'com.maeharin'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'kotlin'
+apply plugin: 'hello-gradle-plugin'
 
 repositories {
     mavenCentral()
-    maven {
-        url "https://dl.bintray.com/maeharin/hello-gradle-plugin"
-    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile 'com.maeharin:hello-gradle-plugin:0.0.1'
 }
 
 compileKotlin {
