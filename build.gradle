@@ -16,10 +16,14 @@ apply plugin: 'kotlin'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://dl.bintray.com/maeharin/hello-gradle-plugin"
+    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile 'com.maeharin:hello-gradle-plugin:0.0.1'
 }
 
 compileKotlin {
